@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class HangmanMain {
     private String wordToFind = "alma";
-    private String wordFound = "____";
+    private String wordFound;
     private int chances = 8;
 
     public static void main(String[] args) {
@@ -13,6 +13,12 @@ public class HangmanMain {
 
     private void run() {
         Scanner scanner = new Scanner(System.in);
+
+        StringBuilder sb = new StringBuilder();
+        for(int i=0; i<wordToFind.length(); i++) {
+            sb.append('_');
+        }
+        wordFound = sb.toString();
 
         while(!wordToFind.equals(wordFound) && (chances > 0)){
             System.out.println("Itt tartasz: " + wordFound);
